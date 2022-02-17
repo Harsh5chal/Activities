@@ -9,10 +9,6 @@
           height:50px;
           padding-left: 30px;
         }
-        table{
-            padding-bottom: 20px;
-            padding-top: 5px;
-        }
         .topleft {
             position: absolute;
             top: 32px;
@@ -28,29 +24,27 @@
         h1 {
             text-align: center;
         }
-        .first {
+        h2 {
             padding: 10px;
-            width:100%;
+            width: 97.5%;
             height:20px;
             border:1px solid #000;
             background-color:#aaaaaa;
             font-weight: 900;
             font-size: 20px;
         }
-        a:link {
+        a {
             color: rgb(0, 0, 0);
             text-decoration: none;
-        }
-        body {
-            border: 1px solid black;
-        }
-        .sec {
-            width: 98%;
-            padding-left: 3px;
+            text-align: right;
         }
         p {
             font-weight: 900;
             font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
         }
         li {
             padding-left: 20px;
@@ -63,20 +57,24 @@
         .list2 {
             padding-left: 40px;
         }
+        .container {
+            margin: 0 auto;
+            max-width: 800px;
+            background: #FFFFFF;
+            border-left: 1px solid #CCCCCC;
+            border-right: 1px solid #CCCCCC;
+            box-shadow: 2px 2px 4px #AAAAAA;
+            -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+        }
     </style>
 </head> 
 <body>
 <!-- Contact Details -->
 <div class="container">
-    <div class="topleft"><b>+91-7011406310</b></div>
-</div>
 <h1><strong> HARSH PANCHAL</strong></h1>
-<div class="container">
-    <div class="topRight"><a href="mailto:harsh5chal12345@gmail.com"><b>harsh5chal12345@gmail.com</b></a></div>
-</div>
+<p>+91-7011406310 <a href="mailto:harsh5chal12345@gmail.com"><b>harsh5chal12345@gmail.com</b></a></p>
 <!-- Education -->
-<div class="container">
-<div class="sec"><p class="first">EDUCATION</p></div>
+<h2>EDUCATION</h2>
 <table style="width:100%">
     <tr>
         <td style="width:20%">B.Tech Engineering Physics (Major in Electronics)</td>
@@ -97,33 +95,29 @@
         <td>76%</td>
     </tr>
 </table>
-</div>
 <!-- Experience -->
-<div class="container">
-<div class="sec"><p class="first">RELEVANT EXPERIENCES</p></div>
+<h2>RELEVANT EXPERIENCES</h2>
 <ol>
-    <li><b>Data Science Intern | IIM Kashipur  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; July 2021 – August 2021</b></li>
+    <li><b>Data Science Intern | IIM Kashipur &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; July 2021 – August 2021</b></li>
     <ul>
         <li>Developed analysis systems to extract information from 5 year financial data through Bloomberg and implemented a recurrent neural network along with <strong>Long Short-Term Memory</strong> layer for forecasting.</li>
         <li>Predicted stock price with <strong>89%</strong> accuracy to estimated how a business will perform in the future.</li>
     </ul>
 
-    <li><b>Machine Learning Intern | DTU  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; June 2021 – August 2021</b></li>
+    <li><b>Machine Learning Intern | DTU &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; June 2021 – August 2021</b></li>
     <ul>
         <li>Devised and established analysis systems to obtain information from radiography data for image classification and created incredibly parallelized <strong>Convolutional Neural Network</strong> alongside transfer learning.</li>
         <li>Evaluated model performance with accuracy of simulation by <strong>83%</strong>using complex algorithms.</li>
     </ul>
 
-    <li><b>IoT Intern | LBD ROBOTICS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;June 2019 – July 2019</b></li>
+    <li><b>IoT Intern | LBD ROBOTICS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; June 2019 – July 2019</b></li>
     <ul>
         <li>Conceptualized and implemented advanced strategies for gathering, reviewing and <strong>analyzing</strong> weather data using DHT11, MQ7 sensors and send the information to <strong>Google Sheets</strong> via ESP8266.</li>
         <li>Collaborated closely with the team and use requirements to drive the design or review of test cases.</li>
     </ul>
 </ol>
-</div>
 <!-- Projects -->
-<div class="container">
-<div class="sec"><p class="first">ACADEMIC PROJECTS</p></div>
+<h2>ACADEMIC PROJECTS</h2>
 <ol>
     <li><b>Diabetes Detection WebApp | <a class="link" href="https://idiabetes-detection.herokuapp.com">Link</a> <a href="https://github.com/Harsh5chal/Diabetes-Detection">GitHub</a></b></li>
     <ul>
@@ -143,33 +137,29 @@
         <li>Deployed the project into <strong>Heroku</strong> using GIT version control system.</li>
     </ul>
 </ol>
-</div>
-<!-- PROJECTS -->
-<div class="container">
-<div class="sec"><p class="first">POSITIONS OF RESPONSIBILITY</p></div>
+<!-- PR -->
+<h2>POSITIONS OF RESPONSIBILITY</h2>
 <ol>
-    <li><b>Campus Ambassador | Great Learning &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Jun’21 – Jul’21</b></li>
+    <li><b>Campus Ambassador | Great Learning &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Jun’21 – Jul’21</b></li>
     <ul>
         <li>Organized unique events to hold both on and off campus to involve students through <strong>700+</strong> free courses.</li>
         <li>Engage students on campus to grow awareness of Great Learning and exclusive offers on courses.</li>
     </ul>
 
-    <li><b>Corporate Ambassador | IFortis Corporate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Jun’21 – Jul’21</b></li>
+    <li><b>Corporate Ambassador | IFortis Corporate  &nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Jun’21 – Jul’21</b></li>
     <ul>
         <li>Represented IFortis on campus and <strong>devised</strong> awareness among students for the event organized by IFortis.</li>
         <li>Distributed promotional and informational materials to fellow students.</li>
     </ul>
 
-    <li><b>Co-Head of INNOVA 2020 | DTU &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oct’19 – Feb’20</b></li>
+    <li><b>Co-Head of INNOVA 2020 | DTU  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oct’19 – Feb’20</b></li>
     <ul>
         <li>The Annual Techno-Management fest of Delhi Technological University</li>
         <li>Lead a team of 40 members and manage events between various college groups.</li>
     </ul>
 </ol>
-</div>
 <!-- Certification -->
-<div class="container">
-<div class="sec"><p class="first">CERTIFICATIONS AND COURSEWORK</p></div>
+<h2>CERTIFICATIONS AND COURSEWORK</h2>
 <ul class="list2">
     <li>Object Oriented Programming by UCSanDiego, Coursera.</li>
     <li>Algorithmic Toolbox by University of California San Diego, Coursera.</li>
@@ -177,19 +167,15 @@
     <li>Version Control with Git, Udacity</li>
     <li><strong>HackerRank</strong> - JavaScript, Python, SQL, <strong>Cutshort</strong> - C++, HTML, CSS.</li>
 </ul>
-</div>
 <!-- ACHIVEMENTS -->
-<div class="container">
-<div class="sec"><p class="first">ACHIVEMENTS AND EXTRA-CURRICULAR ACTIVITIES</p></div>
+<h2>ACHIVEMENTS AND EXTRA-CURRICULAR ACTIVITIES</h2>
 <ul class="list2">
     <li>Contributed on World environment day event 2018 held in DTU for pollution free environment</li>
     <li>Volunteer on Road Safety Mega Event organized by National Service Scheme in 2018.</li>
     <li>2nd Position in 10th class on working model of lightning protection system during science exhibition.</li>
 </ul>
-</div>
 <!-- SKILLS -->
-<div class="container">
-<div class="sec"><p class="first">SKILLS</p></div>
+<h2>SKILLS</h2>
 <ul class="list2">
     <li><strong>Programming Languages</strong> - C, C++, Python.</li>
     <li><strong>Web</strong> - HTML, CSS, JavaScript.</li>
