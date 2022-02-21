@@ -3,10 +3,9 @@
     <head>
         <link rel="stylesheet" href="Invoice.css">
         <script src="Invoice.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/regular.min.js" integrity="sha512-iE5K3aeAv/SEBUez5TTre6Xe7duTVdSe47BJnLuPyFYDQu92HVbAtJ/EB78Dt+BYtOMmi6Ij2XyJfPvf8OSJNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#newrow').click(function(){
@@ -21,33 +20,21 @@
             })
         </script>
         <script>
-            function copyText() {
-          
-                /* Select text area by id*/
-                var Text = document.getElementById("textbox");
-      
-                /* Select the text inside text area. */
-                Text.select();
-      
-                /* Copy selected text into clipboard */
-                navigator.clipboard.writeText(Text.value);
-      
-                /* Set the copied text as text for 
-                div with id clipboard */
-                document.getElementById("clipboard")
-                    .innerHTML = Text.value;
-            }
+            //totalamount
+            
         </script>
     </head>
-    <body>
-        <div class="container">
+    <body id="Pdf">
+        <div class="container" >
             <div class="row">
-                <div class="row-2">
-                    <div class="col-2">
-                        <p style="font-size: 20px"><button class="button" type="button" id="due">DUE</button>Invoice </p>
+                <div class="row-1">
+                    <div class="col-1">
+                        <p style="font-size: 20px"><button class="button" onclick="generatePdf()">DUE</button>
+                            Invoice 
+                        </p>
                         <p style="border: 1px solid rgb(180, 180, 180);padding: 10px;font-size: 14px;">Thank you for your purchase. Timely payment will be appreciated.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <img src="logo.png" style="width:200px;height:50px;display: block;margin-top: 60px;margin-left: 60px;"> 
                     </div>
                     <table>
@@ -74,37 +61,37 @@
                     </table>
                 </div>
             </div>
-            <!--R0W2-->
+        <!--R0W2-->
         <div class="row">
-            <div class="col-4">
-            <div class="row-comp-details">
-                <div class="col-company-details">
-                    <h2 class="from">From</h2>
-                    <div class="name">Your Business, Inc.</div>
-                    <div class="address">Your Address</div>
-                    <div class="city">City & ZIP</div>
-                    <div class="country">Your Country</div>
-                </div>
-                <div class="col invoice-to">
-                    <h2 class="to">To</h2>
-                    <div class="box">
-                        <textarea id="box" name="box" rows="4" cols="40" style="background-color: rgb(230, 230, 230);padding: 10px;" >Example, Inc.
+            <div class="col-3">
+                <div class="row-comp-details">
+                    <div class="col-company-details">
+                        <h2 class="from">From</h2>
+                        <div class="name">Your Business, Inc.</div>
+                        <div class="address">Your Address</div>
+                        <div class="city">City & ZIP</div>
+                        <div class="country">Your Country</div>
+                    </div>
+                    <div class="col invoice-to">
+                        <h2 class="to">To</h2>
+                        <div class="box">
+                            <textarea id="box" name="box" rows="4" cols="40" style="background-color: rgb(230, 230, 230);padding: 10px;" >Example, Inc.
 80 Mortimer Street
 London W1W 7FE
 United Kingdom
-                        </textarea>
+                            </textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
 
-            <div class="col-3" style="float: left;">
-                <div class="date" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+            <div class="col-4" style="float: left;">
+                <div class="date">
                 <label for="date" style="display:block;">Date</label>
                 <input type="date" id="date" name="date" style="width:78%">
                 </div>
 
-                <div class="InvoiceDue" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+                <div class="InvoiceDue">
                     <label for="InvoiceDue" style="display:block;">Invoice Due</label>
                     <select name="Invoice" id="due" style="width:80%">
                         <option value="After 10 days">After 30 days</option>
@@ -114,27 +101,29 @@ United Kingdom
                     </select>
                 </div>
 
-                <div class="Purchase" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+                <div class="Purchase">
                     <label for="Purchase" style="display:block;">Purchase Order Number</label>
                     <input type="Purchase" id="Purchase" placeholder="PO-123" name="Purchase" style="width:78%">
                 </div>
             </div>
         </div>
         <!--R0W3-->
-            <div class="row">
-                  
-                <table style="padding-top: 20px;">
+            <div class="row">  
+                <form oninput="ttl.value=parseInt(qty.value)*parseInt(prc.value)">
+                <table class="desctable" id="table-2">
                     <thread>
+                    
                         <tr>
                             <th  style="width: 50%;text-align: left;">Name <input class="des" id="textbox" type='text' name='desname' style="margin-top: 10px;display: block;" placeholder='Items You Are Selling'></th>
-                            <th style="width: 15%">Quantity 
-                                <input type='number' name='Quantity' style="text-align:right;width: 60%;margin-top:10px" placeholder='100'>
+                            <th id="quantity"style="width: 15%">Quantity 
+                                <input type='number' name='qty' style="text-align:right;width: 60%;margin-top:10px" placeholder='100'>
                             </th>
-                            <th style="width: 15%">Rate
-                                <input type='number' name='Rate' style="text-align:right;width: 60%;margin-top:10px" placeholder='10.00'>
+                            <th style="width: 15%" id="rate">Rate
+                                <input type='number' name='prc' style="text-align:right;width: 60%;margin-top:10px" placeholder='10.00'>
                             </th>
-                            <th style="width: 20%">Amount<input type='number' name='Amount' style="text-align:right;width: 80%;margin-top:10px" placeholder='GBP   1000.00'></th>
+                            <th style="width: 20%" id="total">Amount<output for="qty prc" type='number' name='ttl' style="display:block;text-align:right;width: 60%;margin-top:10px;margin-left: 10px;border:1px solid black"></output></th>
                         </tr>
+
                     </thread>
                     <body>
                 
@@ -159,7 +148,7 @@ United Kingdom
                             <td></td>
                             <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">
                                 <label for="fname" style="display: inline;">Value Added Tax</label>
-                                <input type="number" id="fname" name="fname" placeholder="20%"  value="20%" size="4">
+                                <input type="number" id="fname" name="fname" placeholder="20%" size="4">
                             </td>
                             <td style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">200.00</td>
                         </tr>
@@ -171,16 +160,18 @@ United Kingdom
 
                     </tfoot>
                 </table>
-                
+                </form>
             </div>
             
-            <div class="row" style="padding-top: 10px;padding-bottom: 10px;text-align:right;">
+            <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
                 <table>
                     <tr colspan="2">
-                        <td style="width: 210px;"></td>
-                        <td colspan="2">Total Due</td>
-                        <td>GBP</td>
-                        <td >1,200.00</td>
+                        <td colspan="2" style="width: 27%;"></td>
+                        <td colspan="2" style="width: 5%;background-color: #E53E3E; border: 3px solid #E53E3E;">
+                            <label id="btn-Text"> Total Due</label>
+                        </td>
+                        <td colspan="2" style="width: 1%;border-top: 3px solid #E53E3E;border-bottom: 3px solid #E53E3E;"><label class="btn-curr" >GBP</label></td>
+                        <td colspan="2" style="width: 1%;border-top: 3px solid #E53E3E;border-bottom: 3px solid #E53E3E;border-right: 3px solid #E53E3E;"><label id="btn-Amt"> 1000.00</label></td>
                     </tr>
                 </table>
             </div>

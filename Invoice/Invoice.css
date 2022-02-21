@@ -19,7 +19,7 @@
     border-bottom: 1px solid #CCCCCC;
     margin: 0px 50px;
 }
-.row-2 {
+.row-1 {
     display: table;
 }
 
@@ -38,21 +38,39 @@
     margin: 10px 0px;
 }
 
-.col-2 {
+.col-1 {
     width: 60%;
     float: left;
 }
-.col-3 {
+.col-2 {
     width: 40%;
     float: right;
 }
-.col-4 {
+.col-3 {
     width: 50%;
     float: left;
+}
+.col-4 {
+    width: 40%;
+    float: right;
 }
 .col-5{
     width: 50%;
     float: right;
+}
+
+.InvoiceDue {
+    display:block;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 100%;
+}
+
+.Purchase,.date {
+    display:block;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 100%;
 }
 
 .button {
@@ -91,10 +109,45 @@ h2 {
 table {
     width: 100%;
 }
+.desctable {
+    padding-top: 20px;
+}
+
 .des {
     height: 80px;
     width: 100%;
 }
 .th {
     padding: 10px;
+}
+
+.btn-Total{
+	margin-top: 20px;
+	width: 97%;
+	border: 3px solid #E53E3E;
+	border-radius: 5%;
+	padding:0px 5px 5px 0px;
+	font-weight: bolder;
+}
+
+#btn-Text{
+	background-color:#E53E3E;
+	padding:5px;
+	color: white;
+	border: 2px solid #E53E3E;
+	border-radius: 5%;
+	font-size: 1.1em;
+}
+
+.btn-curr {
+	border-radius: 5%;
+    margin-top: 20px;
+    padding:5px;
+    text-align:right;
+}
+
+#btn-Amt{
+	float: right;
+	border-radius: 5%;
+    padding:5px;
 }
