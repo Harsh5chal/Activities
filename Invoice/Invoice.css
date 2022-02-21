@@ -1,0 +1,100 @@
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    background: #FFFFFF;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    box-shadow: 2px 2px 4px #AAAAAA;
+    -webkit-box-shadow: 2px 2px 4px #AAAAAA;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+.row {
+    display: table;
+    width: 85%;
+    border-bottom: 1px solid #CCCCCC;
+    margin: 0px 50px;
+}
+.row-2 {
+    display: table;
+}
+
+.row-3 {
+    width: 85%;
+    display: table;
+}
+.row-comp-details {
+    width: 85%;
+    display: table;
+    margin: 10px 0px;
+}
+.row-de {
+    width: 85%;
+    display: table;
+    margin: 10px 0px;
+}
+
+.col-2 {
+    width: 60%;
+    float: left;
+}
+.col-3 {
+    width: 40%;
+    float: right;
+}
+.col-4 {
+    width: 50%;
+    float: left;
+}
+.col-5{
+    width: 50%;
+    float: right;
+}
+
+.button {
+    background-color: rgb(226, 83, 83);
+    border-radius: 4px;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    margin: 10px 0px;
+    margin-right: 10px;
+    width: 60px;
+    height: 35px;
+}
+
+h2 {
+    font-weight: 500;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.currency-amount {
+    text-align: right;
+}
+.invoiceno {
+    width: 25%;
+}
+.language {
+    width: 25%;
+    float: right;
+}
+
+table {
+    width: 100%;
+}
+.des {
+    height: 80px;
+    width: 100%;
+}
+.th {
+    padding: 10px;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Invoice.css">
+        <script src="Invoice.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#newrow').click(function(){
+                    var addcontrols = "<tr>"
+                        addcontrols += "<td><input type='text' name='desname' placeholder='Items You Are Selling' size='50'></td>"
+                        //addcontrols += "<td><input type='number' name='Quantity' placeholder='100' size='6'></td>"
+                        //addcontrols += "<td><input type='number' name='Rate' placeholder='10.00' size='6'></td>"
+                        //addcontrols += "<td><input type='number' name='Amount' placeholder='GBP   1000.00' size='6'></td>"
+                        addcontrols += "</tr>";
+                        $("table tbody").append(addcontrols);
+                })
+            })
+        </script>
+        <script>
+            function copyText() {
+          
+                /* Select text area by id*/
+                var Text = document.getElementById("textbox");
+      
+                /* Select the text inside text area. */
+                Text.select();
+      
+                /* Copy selected text into clipboard */
+                navigator.clipboard.writeText(Text.value);
+      
+                /* Set the copied text as text for 
+                div with id clipboard */
+                document.getElementById("clipboard")
+                    .innerHTML = Text.value;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="row-2">
+                    <div class="col-2">
+                        <p style="font-size: 20px"><button class="button" type="button" id="due">DUE</button>Invoice </p>
+                        <p style="border: 1px solid rgb(180, 180, 180);padding: 10px;font-size: 14px;">Thank you for your purchase. Timely payment will be appreciated.</p>
+                    </div>
+                    <div class="col-3">
+                        <img src="logo.png" style="width:200px;height:50px;display: block;margin-top: 60px;margin-left: 60px;"> 
+                    </div>
+                    <table>
+                        <thread>
+                            <tr>
+                                <th style="height: 100px;text-align:left">Invoice No.
+                                    <input type="text" class="currency-amount" style="display:block;margin-top: 10px;"  placeholder="INV-694" size="8">                                    
+                                </th>
+                                <th></th>
+                                <th style="width: 100px;">Language
+                                    <select style="margin-top:10px;">
+                                        <option data-content='English'>English</option>
+                                    </select>
+                                </th>
+                                <th style="margin-left: 20px;width: 40%;">Currency
+                                    <select class="currency-selector" style="width: 87%;margin-left: 60px; margin-top:10px;">
+                                        <option selected>British Pound - GBP</option>
+                                        <option>Euprope - EUR</option>
+                                        <option>Indian - INR</option>
+                                    </select>
+                                </th>
+                            </tr>
+                        </thread>
+                    </table>
+                </div>
+            </div>
+            <!--R0W2-->
+        <div class="row">
+            <div class="col-4">
+            <div class="row-comp-details">
+                <div class="col-company-details">
+                    <h2 class="from">From</h2>
+                    <div class="name">Your Business, Inc.</div>
+                    <div class="address">Your Address</div>
+                    <div class="city">City & ZIP</div>
+                    <div class="country">Your Country</div>
+                </div>
+                <div class="col invoice-to">
+                    <h2 class="to">To</h2>
+                    <div class="box">
+                        <textarea id="box" name="box" rows="4" cols="40" style="background-color: rgb(230, 230, 230);padding: 10px;" >Example, Inc.
+80 Mortimer Street
+London W1W 7FE
+United Kingdom
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-3" style="float: left;">
+                <div class="date" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+                <label for="date" style="display:block;">Date</label>
+                <input type="date" id="date" name="date" style="width:78%">
+                </div>
+
+                <div class="InvoiceDue" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+                    <label for="InvoiceDue" style="display:block;">Invoice Due</label>
+                    <select name="Invoice" id="due" style="width:80%">
+                        <option value="After 10 days">After 30 days</option>
+                        <option value="After 20 days">After 20 days</option>
+                        <option value="After 30 days">After 10 days</option>
+                        <option value="After 40 days">After 40 days</option>
+                    </select>
+                </div>
+
+                <div class="Purchase" style="display:block;margin-top: 20px;margin-left: 120px;width: 100%;">
+                    <label for="Purchase" style="display:block;">Purchase Order Number</label>
+                    <input type="Purchase" id="Purchase" placeholder="PO-123" name="Purchase" style="width:78%">
+                </div>
+            </div>
+        </div>
+        <!--R0W3-->
+            <div class="row">
+                  
+                <table style="padding-top: 20px;">
+                    <thread>
+                        <tr>
+                            <th  style="width: 50%;text-align: left;">Name <input class="des" id="textbox" type='text' name='desname' style="margin-top: 10px;display: block;" placeholder='Items You Are Selling'></th>
+                            <th style="width: 15%">Quantity 
+                                <input type='number' name='Quantity' style="text-align:right;width: 60%;margin-top:10px" placeholder='100'>
+                            </th>
+                            <th style="width: 15%">Rate
+                                <input type='number' name='Rate' style="text-align:right;width: 60%;margin-top:10px" placeholder='10.00'>
+                            </th>
+                            <th style="width: 20%">Amount<input type='number' name='Amount' style="text-align:right;width: 80%;margin-top:10px" placeholder='GBP   1000.00'></th>
+                        </tr>
+                    </thread>
+                    <body>
+                
+                    </body>
+                    <tfoot>
+                        <tr>
+                            <td><button onclick="copyText()" style="font-size:15px"> <i class="fa fa-copy"></i></button>
+                                <button style="font-size:15px"> <i class="fa fa-calendar"></i></button>
+                                <button style="font-size:15px"> <i class="fa fa-link" aria-hidden="true"></i></button>
+                                <button style="font-size:15px"> <i class="fa fa-tags"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" style="background-color:rgb(129, 139, 224);color: white;padding: 5px;" value="New Line" id="newrow" /></td>
+                        </tr>
+                        <tr colspan="2">
+                            <td></td>
+                            <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">Sub Total</td>
+                            <td style="border-bottom: 1px solid #CCCCCC;">1,000.00</td>
+                        </tr>
+                        <tr colspan="2">
+                            <td></td>
+                            <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">
+                                <label for="fname" style="display: inline;">Value Added Tax</label>
+                                <input type="number" id="fname" name="fname" placeholder="20%"  value="20%" size="4">
+                            </td>
+                            <td style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">200.00</td>
+                        </tr>
+                        <tr colspan="2">
+                            <td></td>
+                            <td colspan="2" style="font-weight: bold;padding-bottom: 10px;">Total (GBP)</td>
+                            <td style="font-weight: bold;">1,200.00</td>
+                        </tr>
+
+                    </tfoot>
+                </table>
+                
+            </div>
+            
+            <div class="row" style="padding-top: 10px;padding-bottom: 10px;text-align:right;">
+                <tr colspan="2">
+                    <td colspan="2">Total Due</td>
+                    <td>GBP 1,200.00</td>
+                </tr>
+            </div>
+        </div>
+    </body>
+</html>
