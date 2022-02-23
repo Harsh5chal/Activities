@@ -1,0 +1,1 @@
+![screencapture-file-Users-harshpanchal-Documents-GitHub-Activities-Resume-Resume-html-2022-02-22-10_06_50](https://user-images.githubusercontent.com/75268993/155064251-9b44b70f-3bd2-45b8-81d9-666c1289e2e2.png)
