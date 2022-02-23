@@ -9,58 +9,82 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#newrow').click(function(){
-                    var addcontrols = "<tr>"
-                        addcontrols += "<td><input type='text' name='desname' placeholder='Items You Are Selling' size='50'></td>"
-                        //addcontrols += "<td><input type='number' name='Quantity' placeholder='100' size='6'></td>"
-                        //addcontrols += "<td><input type='number' name='Rate' placeholder='10.00' size='6'></td>"
-                        //addcontrols += "<td><input type='number' name='Amount' placeholder='GBP   1000.00' size='6'></td>"
-                        addcontrols += "</tr>";
-                        $("table tbody").append(addcontrols);
-                })
+                    var addcontrols = "<div class='row-inv' id='parent'>"
+                        addcontrols += "<div class='column-1'><input class='des' id='textbox' type='text' name='desname' style='margin-top: 10px;display: block;' placeholder='Items You Are Selling'><button onclick='copyText()' style='font-size:15px;margin-top:10px;'> <i class='fa fa-copy'></i></button></div>"
+                        addcontrols += "<div class='column-2'><input type='number' id='qty' onClick='multiplyBy()' style='text-align:right;width: 100%;margin-top:10px' placeholder='100'></div>"
+                        addcontrols += "<div class='column-3'><input type='number' id='prc' onClick='multiplyBy()'  style='text-align:right;width: 100%;margin-top:10px' placeholder='10.00'></div>"
+                        addcontrols += "<div class='column-4'><output onClick='multiplyBy()' onChange='updateAmount()' for='qty prc' type='number' id='ttl' style='display:block;text-align:right;width: 100%;margin-top:10px;margin-left: 10px;border:1px solid black'>1000</div>"
+                        addcontrols += "</div>";
+                        $("div #parent").append(addcontrols);
+                });
             })
         </script>
-        <script>
-            //totalamount
-            
+
+        <script type="text/javascript">
+                     $(document).ready(function(){
+                        $('#delete').click(function(){
+                            var addcontrols = "<div class='row-inv' style='margin-bottom: 100px;' id='parent'>"
+                            addcontrols -= "<div class='column-1'><input class='des' id='textbox' type='text' name='desname' style='margin-top: 10px;display: block;' placeholder='Items You Are Selling'></div>"
+                            addcontrols -= "<div class='column-2'><input type='number' id='qty' onClick='multiplyBy()' style='text-align:right;width: 100%;margin-top:10px' placeholder='100'></div>"
+                            addcontrols -= "<div class='column-3'><input type='number' id='prc' onClick='multiplyBy()'  style='text-align:right;width: 100%;margin-top:10px' placeholder='10.00'></div>"
+                            addcontrols -= "<div class='column-4'><output onClick='multiplyBy()' onChange='updateAmount()' for='qty prc' type='number' id='ttl' style='display:block;text-align:right;width: 100%;margin-top:10px;margin-left: 10px;border:1px solid black'></div>"
+                            addcontrols -= "</div>";
+                            $("div #parent").empty(addcontrols);
+                        })
+                    })
+        </script>
+        
+        <script type="text/javascript">
+            //curr change
+            $(document).ready(()=>{
+                $("#select").click(function(){
+                    $("#ind").click(function(){
+                        var ind = 1
+                        var num2 = ttl.val()
+                        var res = parseInt(ind) * parseInt(num2);
+                        $("ttl").val(value) = res.val();
+                    })
+                })
+            });  
         </script>
     </head>
-    <body id="Pdf">
-        <div class="container" >
+    <body>
+        <div class="container" id="Pdf" >
             <div class="row">
                 <div class="row-1">
                     <div class="col-1">
                         <p style="font-size: 20px"><button class="button" onclick="generatePdf()">DUE</button>
                             Invoice 
                         </p>
-                        <p style="border: 1px solid rgb(180, 180, 180);padding: 10px;font-size: 14px;">Thank you for your purchase. Timely payment will be appreciated.</p>
+                        <p style="border: 1px solid rgb(180, 180, 180);padding: 6px;font-size: 14px;">Thank you for your purchase. Timely payment will be appreciated.</p>
                     </div>
                     <div class="col-2">
                         <img src="logo.png" style="width:200px;height:50px;display: block;margin-top: 60px;margin-left: 60px;"> 
                     </div>
-                    <table>
-                        <thread>
-                            <tr>
-                                <th style="height: 100px;text-align:left">Invoice No.
-                                    <input type="text" class="currency-amount" style="display:block;margin-top: 10px;"  placeholder="INV-694" size="8">                                    
-                                </th>
-                                <th></th>
-                                <th style="width: 100px;">Language
-                                    <select style="margin-top:10px;">
-                                        <option data-content='English'>English</option>
-                                    </select>
-                                </th>
-                                <th style="margin-left: 20px;width: 40%;">Currency
-                                    <select class="currency-selector" style="width: 87%;margin-left: 60px; margin-top:10px;">
-                                        <option selected>British Pound - GBP</option>
-                                        <option>Euprope - EUR</option>
-                                        <option>Indian - INR</option>
-                                    </select>
-                                </th>
-                            </tr>
-                        </thread>
-                    </table>
                 </div>
             </div>
+        <div class="row">
+            <div class="row-inv">
+                <div class="column">
+                    <label for="Invoice">Invoice No.</label>
+                    <input type="text" class="currency-amount" style="display:block;margin-top: 10px;"  placeholder="INV-694" size="8">                                    
+                </div>
+                <div class="column">
+                    <label for="language">Language</label>
+                    <select style="margin-top:10px;display: block;">
+                        <option data-content='English'>English</option>
+                    </select>
+                </div>
+                <div class="column" style="margin-left: 20px;width: 40%;">
+                    <label for="currency">Currency</label>
+                    <select class="currency-selector" style="width: 100%;margin-top:10px;" id="select" OnChange="currChange()">
+                        <option id="gbp">British Pound - GBP</option>
+                        <option id="eur">Euprope - EUR</option>
+                        <option selected id="ind">Indian - INR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <!--R0W2-->
         <div class="row">
             <div class="col-3">
@@ -109,71 +133,61 @@ United Kingdom
         </div>
         <!--R0W3-->
             <div class="row">  
-                <form oninput="ttl.value=parseInt(qty.value)*parseInt(prc.value)">
-                <table class="desctable" id="table-2">
-                    <thread>
-                    
-                        <tr>
-                            <th  style="width: 50%;text-align: left;">Name <input class="des" id="textbox" type='text' name='desname' style="margin-top: 10px;display: block;" placeholder='Items You Are Selling'></th>
-                            <th id="quantity"style="width: 15%">Quantity 
-                                <input type='number' name='qty' style="text-align:right;width: 60%;margin-top:10px" placeholder='100'>
-                            </th>
-                            <th style="width: 15%" id="rate">Rate
-                                <input type='number' name='prc' style="text-align:right;width: 60%;margin-top:10px" placeholder='10.00'>
-                            </th>
-                            <th style="width: 20%" id="total">Amount<output for="qty prc" type='number' name='ttl' style="display:block;text-align:right;width: 60%;margin-top:10px;margin-left: 10px;border:1px solid black"></output></th>
-                        </tr>
-
-                    </thread>
-                    <body>
-                
-                    </body>
-                    <tfoot>
-                        <tr>
-                            <td><button onclick="copyText()" style="font-size:15px"> <i class="fa fa-copy"></i></button>
-                                <button style="font-size:15px"> <i class="fa fa-calendar"></i></button>
-                                <button style="font-size:15px"> <i class="fa fa-link" aria-hidden="true"></i></button>
-                                <button style="font-size:15px"> <i class="fa fa-tags"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" style="background-color:rgb(129, 139, 224);color: white;padding: 5px;" value="New Line" id="newrow" /></td>
-                        </tr>
-                        <tr colspan="2">
-                            <td></td>
-                            <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">Sub Total</td>
-                            <td style="border-bottom: 1px solid #CCCCCC;">1,000.00</td>
-                        </tr>
-                        <tr colspan="2">
-                            <td></td>
-                            <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">
-                                <label for="fname" style="display: inline;">Value Added Tax</label>
-                                <input type="number" id="fname" name="fname" placeholder="20%" size="4">
-                            </td>
-                            <td style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">200.00</td>
-                        </tr>
-                        <tr colspan="2">
-                            <td></td>
-                            <td colspan="2" style="font-weight: bold;padding-bottom: 10px;">Total (GBP)</td>
-                            <td style="font-weight: bold;">1,200.00</td>
-                        </tr>
-
-                    </tfoot>
-                </table>
-                </form>
+                <div class="row-inv" style="margin-bottom: 50px;" id="parent">
+                    <div class="column-1">
+                        <label for="Name">Name</label> 
+                        <input class="des" id="textbox" type='text' name='desname' style="margin-top: 10px;display: block;" placeholder='Items You Are Selling'>
+                        <button onclick="copyText()" style="font-size:15px;margin-top:10px;"> <i class="fa fa-copy"></i></button>
+                        
+                    </div>
+                    <div class="column-2">
+                        <label for="Quantity">Quantity</label>
+                        <input type='number' id='qty' onClick="multiplyBy()" style="text-align:right;width: 100%;margin-top:10px" placeholder='100'>
+                    </div>
+                    <div class="column-3">
+                        <label for="rate">Rate</label>
+                        <input type='number' id='prc' onClick="multiplyBy()"  style="text-align:right;width: 100%;margin-top:10px" placeholder='10.00'>
+                    </div>
+                    <div class="column-4">
+                        <label for="amount">Amount</label>
+                        <output onClick="multiplyBy()" onChange="updateAmount()" for="qty prc" type='number' id='ttl' style="display:block;text-align:right;width: 100%;margin-top:10px;margin-left: 10px;border:1px solid black">1000.00</output>
+                    </div>
+                </div>
             </div>
-            
-            <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
+
+            <div class="row">
+                <div class="btn" id="btn">
+                    <input type="button" style="background-color:rgb(129, 139, 224);color: white;padding: 5px;margin-top:10px" value="New Line" id="newrow" />
+                    <input type="button" style="background-color:rgb(129, 139, 224);color: white;padding: 5px;margin-top:10px" value="Delete" id="delete" />
+                </div>
+            </div>
+
+            <div class="row" style="margin-top:20px">
                 <table>
                     <tr colspan="2">
-                        <td colspan="2" style="width: 27%;"></td>
-                        <td colspan="2" style="width: 5%;background-color: #E53E3E; border: 3px solid #E53E3E;">
-                            <label id="btn-Text"> Total Due</label>
-                        </td>
-                        <td colspan="2" style="width: 1%;border-top: 3px solid #E53E3E;border-bottom: 3px solid #E53E3E;"><label class="btn-curr" >GBP</label></td>
-                        <td colspan="2" style="width: 1%;border-top: 3px solid #E53E3E;border-bottom: 3px solid #E53E3E;border-right: 3px solid #E53E3E;"><label id="btn-Amt"> 1000.00</label></td>
+                        <td></td>
+                        <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;">Sub Total</td>
+                        <td style="border-bottom: 1px solid #CCCCCC;" ><output style="float:right;" onChange="updateAmount()" onClick="multiplyBy()" id="sub">1000</output></td>
                     </tr>
-                </table>
+                    <tr colspan="2">
+                        <td></td>
+                        <td colspan="2" style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;padding-top: 10px;">
+                            <label for="fname" style="display: inline;">Value Added Tax</label>
+                            <input type="number" onClick="taxBy()" onChange="uptaxBy()" id="tax"  name="fname" placeholder="20%" size="4">
+                        </td>
+                        <td style="border-bottom: 1px solid #CCCCCC;padding-bottom: 10px;" ><output style="float:right;" id="tax-val">200</output></td>
+                    </tr>
+                        <tr colspan="2">
+                        <td></td>
+                        <td colspan="2" style="font-weight: bold;padding-bottom: 10px;padding-top: 10px;background-color:red;color:white;width:1%;">Total (GBP)</td>
+                        <td style="font-weight: bold;border: 3px solid red;">
+                            <output style="float:right;" onChange="upsubBy()" onClick="subBy()" id="sub-tax">
+                                1200
+                            </output>
+                        </td>
+                        </tr>
+                    </table>
+                </div>   
             </div>
         </div>
     </body>

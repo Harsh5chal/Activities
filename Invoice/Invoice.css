@@ -17,7 +17,7 @@
     display: table;
     width: 85%;
     border-bottom: 1px solid #CCCCCC;
-    margin: 0px 50px;
+    margin: 10px 50px;
 }
 .row-1 {
     display: table;
@@ -47,17 +47,17 @@
     float: right;
 }
 .col-3 {
-    width: 50%;
+    width: 38%;
     float: left;
 }
 .col-4 {
-    width: 40%;
-    float: right;
+    width: 50%;
 }
 .col-5{
-    width: 50%;
+    width: 75%;
     float: right;
 }
+
 
 .InvoiceDue {
     display:block;
@@ -107,47 +107,80 @@ h2 {
 }
 
 table {
-    width: 100%;
+    width: 50%;
+    float: right;
 }
 .desctable {
     padding-top: 20px;
 }
 
 .des {
-    height: 80px;
     width: 100%;
 }
 .th {
     padding: 10px;
 }
 
-.btn-Total{
-	margin-top: 20px;
-	width: 97%;
-	border: 3px solid #E53E3E;
-	border-radius: 5%;
-	padding:0px 5px 5px 0px;
-	font-weight: bolder;
+.column {
+    float: left;
+    width: 23%;
+    padding: 10px;
+    height: 50px; 
 }
 
-#btn-Text{
-	background-color:#E53E3E;
-	padding:5px;
-	color: white;
-	border: 2px solid #E53E3E;
-	border-radius: 5%;
-	font-size: 1.1em;
+.row-inv:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.btn-curr {
-	border-radius: 5%;
-    margin-top: 20px;
-    padding:5px;
-    text-align:right;
+.column-1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 50px; 
+}
+.column-2 {
+    float: left;
+    width: 9%;
+    padding: 10px;
+    height: 50px; 
+}
+.column-3 {
+    float: left;
+    width: 12%;
+    padding: 10px;
+    height: 50px; 
+}
+.column-4 {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    height: 50px; 
+    text-align:right
 }
 
-#btn-Amt{
-	float: right;
-	border-radius: 5%;
-    padding:5px;
+.column-5 {
+    float: left;
+    width: 9%;
+    padding: 50px;
+    height: 50px; 
+}
+.column-6 {
+    float: left;
+    width: 9%;
+    padding: 50px;
+    height: 50px; 
+}
+.column-7 {
+    float: left;
+    width: 9%;
+    padding: 50px;
+    height: 50px; 
+}
+
+.btn {
+    float: left;
+    width: 50%;
+    height: 60px; 
 }
