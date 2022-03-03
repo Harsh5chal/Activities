@@ -1,0 +1,76 @@
+<!--Regex
+var pattern = new RegExp(pattern,flag);
+var pattern = /pattern/flag;
+
+pattern - it is a string that specifies the pattern of the regex 
+flag - it is use to alter the regex
+
+Pattern :
+        [a-b] - denotes a character class
+        [^a-b] - chr not between 
+        () - denotes a capturing group
+        0-9 - The string must contain at least 1 numeric character
+        . - period does not occur twice
+
+Quantifier :
+        N+ - one or more occurrences of N
+        N* - zero or more occurrences of N
+        N? - zero or one occurrence of N
+        N{X} - string that contains a sequence of X n's
+        N{X,Y} - string that contains a sequence of X to Y n's
+        N{X,} - string that contains a sequence of at least X n's
+        N$ - matches string with n at the endof it
+
+Special Characters :
+        \w - look for words character
+        \W - finds a non-word character
+        \s - finds a whitespace character
+        \S - finds a non-whitespace character
+        \d - finds a digit
+        \D - finds a non-digit character
+        \b - finds a match at the beginning/end of a word
+        \B - finds a match but not at the beginning/end of a word
+-->
+
+<html>
+    <head>
+        <title>Email Validation</title>
+        <script>
+            function validateEmail(){
+                var mail = document.getElementById("email").value;
+                var regex = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+
+                if(mail.match(regex))
+                {
+                    alert("valid email address")
+                    return true;
+                }
+                else{
+                    alert("invalid email address")
+                    return false;
+                }
+            }
+
+            function validatePass(){
+                var pswrd = document.getElementById("password").value;
+                var reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/
+
+                if(pswrd.match(reg)){
+                    alert("Passwords is correct")
+                    return true;
+                }
+                else {
+                    alert("Passwords is invalid")
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" placeholder="Email" id="email"><br><br>
+            <input type="text" placeholder="Password" id="password"><br><br>
+            <button type="button" onclick="validateEmail();validatePass()">Submit</button>
+        </form>
+    </body>
+</html>

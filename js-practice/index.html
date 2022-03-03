@@ -1,0 +1,405 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>JS DOM</h1>
+        <!-- <p id="example"><button id="fetchButton" type="button">CLICK HERE</button> <br><br> <button id="populateButton" type="button">Pop HERE</button></p> -->
+        <!-- <ul id="UserId"> </ul> -->
+        <p id="example"><button id="fetchBtn" type="button">Fetch Data</button> <br> <br> <button id="myBtn" type="button">Your Data</button></p>
+        <div id="content"> </div>
+        <script>
+            //Ch-1
+
+            // // Create a DOM element
+            // var element = document.createElement('p');
+            // element.textContent = "Hello, Harsh";
+            // document.body.appendChild(element);
+
+            // // Prompt
+            // var age = prompt("Enter Your Age");
+            // console.log(age);
+
+            // // Window.confirm
+            // var deleteItem = window.confirm('Are you sure you want to delete');
+
+            // DOM Canvas Element
+            // var canvas = document.createElement('canvas');
+            // canvas.width = 800;
+            // canvas.height = 600;
+
+            // var ctx = canvas.getContext('2d');
+            // ctx.font = '30px Cursive';
+            // ctx.fillText("Hello world",50,50);
+            // document.body.appendChild(canvas);
+            
+            // // Image
+            // var image = new Image();
+            // image.src = 'https://500px.com/photo/26647579/Above-the-Oceant-Of-Clouds-by-Evgeni-Dinev/';
+            // document.body.appendChild(image);
+
+            //Ch-2
+            // Array
+            // var arr = [2,3,4,5,6,7,8,9,10];
+            // arr.push("1");
+            // arr.pop();
+            // arr.pop();
+            // document.getElementById("example").innerHTML = arr;
+
+            // Array Object
+            // arr = {name: "Harsh",surname: "Panchal"};
+            // arr2 = {Role: "SWE"};
+            // window.alert(arr.name);
+
+            // Emojis and charCodeAt
+            //var code = "ABCDE".charCodeAt(1);
+            //var code = String.fromCodePoint(128512);
+            //document.getElementById("example").innerHTML = code;
+
+            //Date
+            // var now = new Date();
+            // //document.getElementById("example").innerHTML = now.toUTCString();
+            // document.getElementById("example").innerHTML = now.toJSON();
+
+            //Call Function
+            // let obj = {
+            //     a: 1,
+            //     b: 2,
+            //     set: function(a,b){
+            //         this.a = a;
+            //         this.b = b;
+            //     }
+            // };
+            // // obj.set(3,7);
+            // console.log(obj);
+
+            // p5 Vector in JS
+            // function Vector(){
+            //     createCanvas(600,300);
+            //     p = new Particle();
+            //     v = createVector(3,4);
+            // }
+
+            //Prototype Function
+            // var Bot = function(){
+            //     this.canTalk = true;
+            // }
+
+            // var Member = function(name,title){
+            //     Bot.call(this);
+            //     this.name = name;
+            //     this.title = title;
+            // };
+
+            // Member.prototype.greet = function(){
+            //     if(this.canTalk){
+            //         console.log('Hi, I am' + ' ' + this.name + ' ' + this.title);
+            //     }
+            // }
+            
+            // var mem = new Member('Harsh','SWE');
+            // mem.greet();
+
+            //Classes
+            // class Engineers{
+            //     constructor(givenName, givenExperience, givenRole){
+            //         this.name = givenName;
+            //         this.experience = givenExperience;
+            //         this.role = givenRole;
+            //     }
+
+            //     //static - it doesnt use object 
+            //     static joining(A){
+            //         return 2022 - A 
+            //     }                
+            // }
+            // Harsh = new Engineers("Harsh","2","SWE");
+            // console.log(Harsh);
+            // console.log(Engineers.joining(2018));
+
+            // Inheritance - it is use to create template with the help of other template
+            // class Software extends Engineers{
+            //     constructor(givenName, givenExperience, givenRole, givenLanguage){
+            //         // Whenever new object is made we call super() to get values from previous template
+            //         super(givenName, givenExperience, givenRole);
+            //         this.language = givenLanguage;
+            //     }
+
+            //     expLang(){
+            //         if(this.language == 'Python'){
+            //             return 'Great';
+            //         }
+            //         else{
+            //             return 'Woah';
+            //         }
+            //     }
+            // }
+            // Harsh = new Software("Harsh Panchal","2","SWE","Python");
+            // console.log(Harsh);
+            // console.log(Harsh.expLang());
+
+            // Intervals and timeout
+            // Recursive
+            // function repeatingFunction(){
+            //     console.log("Its been 5 seconds. Executing Function again")
+            // }
+
+            // Sync - only one fuction at a time
+            // Async JS - do task by holding the task in processing (fun) / multiple functions at a time
+            // Async methods :
+                            // 1.) Async / Await
+                            // 2.) Callbacks
+                            // 3.) Promise
+            // setTimeout(() => {
+            //     for (var i = 0; i <50; i++) {
+            //         console.log("This is Async function" + i);
+            //     }
+            // },10);
+            // console.log("Done");
+
+            // AJAX - JS + XML / Json (used for no page reload)
+            //pure js is called Vanilla.js
+            // let fetchButton = document.getElementById("fetchButton");
+            // fetchButton.addEventListener("click", buttonClickHandler);
+
+            // function buttonClickHandler(){
+            //     console.log('Fetch');
+
+            //     // XMLHttpRequest Syntax
+            //     const xhr = new XMLHttpRequest();
+                
+            //     // Open object
+            //     xhr.open("GET", 'xml.txt', true);
+
+            //     //what to do on progress or onprogress method
+            //     xhr.onprogress = function(){
+            //         console.log('On Progress');
+            //     }
+
+            //     // What to do when response is ready
+            //     xhr.onload = function(){
+            //         // To check status of Http 200 is response code of http means ok response
+            //         if(this.status == 200){
+            //             console.log(this.responseText)
+            //         }
+            //         else{
+            //             console.log('Error Occured')
+            //         }
+            //     }
+
+            //     // Send request back to server
+            //     xhr.send();
+            // }
+
+            // let populateButton = document.getElementById("populateButton");
+            // populateButton.addEventListener("click", popHandler);
+
+            // function popHandler(){
+            //     console.log('Populating Json');
+
+            //     // XMLHttpRequest Syntax
+            //     const xhr = new XMLHttpRequest();
+                
+            //     // Open object
+            //     xhr.open("GET", 'https://jsonplaceholder.typicode.com/posts/1', true);
+
+            //     // What to do when response is ready
+            //     xhr.onload = function(){
+            //         // To check status of Http 200 is response code of http means ok response
+            //         if(this.status == 200){
+            //             let obj = JSON.parse(this.responseText);
+            //             console.log(obj);
+            //             document.getElementById("example").innerHTML = obj.userId;
+            //             document.getElementById("example").innerHTML = obj.userId;
+            //             document.getElementById("example").innerHTML = obj.userId;
+            //         }
+            //         else{
+            //             console.log('Error Pop')
+            //         }
+            //     }
+
+            //     // Send request back to server
+            //     xhr.send();
+            // }
+
+            // Why error const promise = new Promise((resolve, reject) => {
+            //     reject(Error('Some error occurred'));
+            // })
+            // promise.catch(error => console.log(error.message));
+            // promise.catch(error => console.log(error.message));
+
+            // const promise = new Promise((resolve, reject) => {
+            //   reject(Error('Some Error Occurred'));
+            // })
+            // .catch(error => console.log(error))
+            // .then(error => console.log(error));
+
+            //Maps
+            // {'UserId': 1, 'PlatformId': 1, 'CRound': 1}, {'UserId': 2, 'PlatformId': 1, 'CRound': 2},
+            // {'UserId': 2, 'PlatformId': 1, 'CRound': 3},
+            // {'UserId': 3, 'PlatformId': 1, 'CRound': 2}]
+
+            // Cookie - use navigator fuction
+            // if(navigator.cookieEnabled === false){
+            //     alert('Error: Cookie is not enabled');
+            // }
+            
+            // Call Back - function inside the function eg: setTimeout(function)- async
+            // call back - Async/sync
+            
+            // Response from server
+            // const response = [
+            //     {UserId: "1", PlatformId: "1"},
+            //     {UserId: "2", PlatformId: "2"}
+            // ]
+
+            // function registerUser(userName, callback) {
+            //     setTimeout(function() {
+            //         response.push(userName);
+            //         console.log("User Added");
+            //         callback();
+            //     },3000)
+            // }
+
+            // function getUser(){
+            //     setTimeout(function() {
+            //         let str = "";
+            //         response.forEach(function(userName){
+            //             str += `<li> ${userName.UserId} </li>`
+            //         });
+            //         document.getElementById('UserId').innerHTML = str;
+            //         console.log("Data Fetched");
+            //     },1000);
+            // }
+
+            // let newuser = {UserId: "3", PlatformId: "3"};
+            // registerUser(newuser, getUser);
+            // getUser();
+
+            // Promises - previous callback to promise
+            // -resolve -reject -pending
+            // function pro(){
+            //     return new Promise(function(resolve, reject){
+            //         setTimeout(function() {
+            //             const error = true;
+            //             if(!error){
+            //                 console.log("Resolved");
+            //                 resolve();
+            //             }
+            //             else{
+            //                 console.log("Rejected");
+            //                 reject();
+            //             }
+            //         })
+            //     })
+            // }
+
+            // pro().then(function(){
+            //     console.log("Then");
+            // }).catch(function(){
+            //     console.log("catch");
+            // });
+
+            //eg:
+            // const response = [
+            //     {UserId: "1", PlatformId: "1"},
+            //     {UserId: "2", PlatformId: "2"}
+            // ]
+
+            // function registerUser(userName) {
+            //     return new Promise(function(resolve, reject){
+            //     setTimeout(function() {
+            //             response.push(userName);
+            //             console.log("User Added");
+            //             const error = false;
+            //             if(!error){
+            //                 resolve();
+            //                 console.log("Promise Resolved")
+            //             }
+            //             else{
+            //                 reject();
+            //                 console.log("Promise Rejected")
+            //             }
+                    
+            //         },3000)
+            //     })
+            // }
+
+            // function getUser(){
+            //     setTimeout(function() {
+            //         let str = "";
+            //         response.forEach(function(userName){
+            //             str += `<li> ${userName.UserId} </li>`
+            //         });
+            //         document.getElementById('UserId').innerHTML = str;
+            //         console.log("Data Fetched");
+            //     },1000);
+            // }
+
+            // let newuser = {UserId: "3", PlatformId: "3"};
+            // registerUser(newuser).then(
+            // //Resolved    
+            // function(){
+            //     getUser();
+            // }).catch(
+            // //Rejected    
+            // function(){
+            //     console.log("catch");
+            // });
+
+            // Fetch in js
+            // let myBtn = document.getElementById("myBtn");
+            // let content = document.getElementById("content");
+
+            // function getData(){
+            //     console.log("Started getData");
+            //     url = "xml.txt";
+            //     //promise
+            //     fetch(url).then((response) => {
+            //         return response.text(); //.json for api
+            //         console.log("Response Returned");
+            //     }).then((data) => {
+            //         console.log(data);
+            //     })
+            // }
+            // console.log("Before running getData");
+            // getData()
+            // console.log("After running getData");
+            
+            // function postData(){
+            //     console.log("Started postData");
+            //     url = "xml.txt";
+            //     // data = '{"name":"harsh","salary":"123","age":"23"}'
+            //     // params = {
+            //     //     method: 'post',
+            //     //     headers: {
+            //     //         'content-type': 'text/plain'
+            //     //     },
+            //     //     body: data
+            //     // }
+            //     //promise fetch(url,params)
+            //     fetch(url).then(response => response.text()).then(data => {console.log(data)}).catch(error => console.error(error))
+            // }
+            // console.log("Before running postData");
+            // postData();
+            // console.log("After running postData");
+
+            // Async function
+            // async function postData(){
+            //     console.log("Inside Function");
+            //     const response = await fetch('http://api.github.com/users');
+            //     console.log("Before response");
+            //     const user = await response.json();
+            //     console.log("After response");
+            //     return user;
+            // }
+            
+            // let a = postData();
+            // console.log("a");
+            // a.then(data => console.log(data))
+
+
+        </script>
+        
+    </body>
+</html>

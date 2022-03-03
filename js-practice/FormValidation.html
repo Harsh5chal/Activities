@@ -1,0 +1,36 @@
+<!--
+    Form Validation :
+    
+    1.) Basic Validation
+    2.) Data Format Validation
+-->
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <script type="text/javascript">
+            function Validate() {
+                if(document.myForm.email.value == "") {
+                    alert("Please enter a valid email address")
+                    document.myForm.email.focus();
+                    return false;
+                }
+                else if(document.myForm.password.value == "") {
+                    alert("Please enter a valid password")
+                    document.myForm.password.focus();
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+      <form action="message.html" name="myForm" onsubmit="return(Validate());" >
+          <input type="text" name="emial" placeholder="Enter your email"><br><br>
+          <input type="text" name="password" placeholder="Enter your password"><br><br>
+          <button type="submit">Submit</button>
+      </form>  
+    </body>
+</html>
